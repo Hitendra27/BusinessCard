@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BusinessCard</string>
+    <string name="full_name">Hitendra Quessou</string>
+    <string name="proffesion">Android Developer Extraordinaire</string>
 </resources>
