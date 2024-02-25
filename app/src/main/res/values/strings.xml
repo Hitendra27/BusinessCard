@@ -2,4 +2,7 @@
     <string name="app_name">BusinessCard</string>
     <string name="full_name">Hitendra Quessou</string>
     <string name="proffesion">Android Developer Extraordinaire</string>
+    <string name="phone_number">+44 7916754097</string>
+    <string name="website">Hitendra27-github</string>
+    <string name="email">sanjay_quessou@yahoo.co.uk</string>
 </resources>
