@@ -8,17 +8,23 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Phone
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.businesscard.ui.theme.BusinessCardTheme
@@ -45,24 +51,29 @@ class MainActivity : ComponentActivity() {
 fun BusinessCardApp() {
     Column(
         Modifier
-            .fillMaxHeight()
-            .fillMaxWidth()
             .background(Color(0xFFCFEEAB)),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom
+        verticalArrangement = Arrangement.Center
     ) {
         NameCard(
             imagePainter = painterResource(R.drawable.android_logo),
             fullName = stringResource(R.string.full_name),
             proffesion = stringResource(R.string.proffesion)
         )
+        Spacer(modifier = Modifier.padding(100.dp))
         DetailsCard(
-            phoneNumber = stringResource(R.string.phone_number),
-            webSite = stringResource(R.string.website),
-            email = stringResource(R.string.email),
+            text = stringResource(R.string.phone_number),
+            icon = Icons.Rounded.Phone
+        )
+        DetailsCard(
+            text = stringResource(R.string.website),
+            icon = Icons.Rounded.Share
+        )
+        DetailsCard(
+            text = stringResource(R.string.phone_number),
+            icon = Icons.Rounded.Email
         )
     }
-
 }
 
 @Composable
@@ -104,40 +115,24 @@ fun NameCard(
 
 @Composable
 fun DetailsCard(
-    //phoneIcon: Icon,
-    phoneNumber: String,
-   // webIcon: Icon,
-    webSite: String,
-   // emailIcon: Icon,
-    email:String
+    text: String,
+    icon: ImageVector,
 ) {
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-    ) {
-        Row() {
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(10.dp)
+        ) {
             Icon(
-                painter = painterResource(R.drawable.baseline_mail_24),
-                contentDescription = "Phone Icon" )
+                imageVector = icon,
+                contentDescription = null,
+                modifier = Modifier.weight(1f))
             Text(
-                text = phoneNumber,
+                text = text,
+                modifier = Modifier
+                    .weight(3f)
             )
-            Row() {
-                Icon(
-                    painter = painterResource(R.drawable.baseline_mail_24),
-                    contentDescription = "website Icon")
-                Text(
-                    text = webSite
-                )
-                Row() {
-                    Icon(
-                        painter = painterResource(R.drawable.baseline_mail_24),
-                        contentDescription = "Email Icon")
-                }
-            }
         }
-    }
 }
 
 @Preview(showBackground = true)
