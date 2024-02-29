@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
 fun BusinessCardApp() {
     Column(
         Modifier
-            .background(Color(0xFFCFEEAB)),
+            .background(Color(0xFF95B373)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -60,7 +61,15 @@ fun BusinessCardApp() {
             fullName = stringResource(R.string.full_name),
             proffesion = stringResource(R.string.proffesion)
         )
-        Spacer(modifier = Modifier.padding(100.dp))
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 50.dp),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.Start
+    ) {
+
         DetailsCard(
             text = stringResource(R.string.phone_number),
             icon = Icons.Rounded.Phone
@@ -70,7 +79,7 @@ fun BusinessCardApp() {
             icon = Icons.Rounded.Share
         )
         DetailsCard(
-            text = stringResource(R.string.phone_number),
+            text = stringResource(R.string.email),
             icon = Icons.Rounded.Email
         )
     }
@@ -119,14 +128,16 @@ fun DetailsCard(
     icon: ImageVector,
 ) {
         Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(10.dp)
+            modifier = Modifier
+                .padding(5.dp)
+                .padding(start = 50.dp)
         ) {
             Icon(
                 imageVector = icon,
                 contentDescription = null,
-                modifier = Modifier.weight(1f))
+                modifier = Modifier.weight(1f),
+                tint = Color(0xFF1C521E)
+            )
             Text(
                 text = text,
                 modifier = Modifier
