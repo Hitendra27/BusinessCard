@@ -48,6 +48,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// HEX: #d2e8d4
+
+// RGB: rgba(210,232,212,255)
+
 @Composable
 fun BusinessCardApp() {
     Column(
