@@ -20,8 +20,7 @@ The Android Business Card App is a mobile application designed to create and sha
 ## Screenshots
 <img width="305" alt="Screenshot 2024-01-24 at 01 08 54" src="https://github.com/Hitendra27/BusinessCard/assets/73651340/1f7e5d2c-8a06-4ab3-aa43-a8c584988325">
 
-<img width="305" alt="Screenshot 2024-02-29 at 18 35 26" src="https://github.com/Hitendra27/BusinessCard/assets/73651340/16045740-8cc1-4bc1-a4d2-bc533c3d7658">
-
+<img width="377" alt="Screenshot 2024-05-27 at 20 37 39" src="https://github.com/Hitendra27/BusinessCard/assets/73651340/de35b29e-596c-46ba-9540-5888f09d1d58">
 
 ## Tech Stack
 
